@@ -86,30 +86,34 @@
     }
 
     /* Ajuste geral das imagens dentro das divs */
-    .content img {
-        width: 100% !important;   /* imagens grandes ocupam toda largura */
-        height: auto !important;
-        float: none !important;
-        margin: 0 0 20px 0; 
-    }
-
-    /* Bandeirinhas ficam pequenas como no PC */
-    .content img.flag {
-        width: 50px !important;  /* tamanho fixo da bandeira */
-        height: auto !important;
-        float: none !important;
-        margin: 0 10px 0 0;  /* espaçamento do lado da bandeira */
-    
-    /* Bandeirinhas Sarda e Basca menores no celular */
-.content img[src*="mapa-6"], /* bandeira Sarda */
-.content img[src*="mapa-7"]  /* bandeira Basca */ {
-    width: 5px !important;
+.content img {
+    width: 100% !important;   /* imagens grandes ocupam toda largura */
     height: auto !important;
+    float: none !important;
+    margin: 0 0 20px 0; 
 }
 
-    
+/* Bandeirinhas ficam pequenas como no PC */
+.content img.flag {
+    width: 50px !important;  /* tamanho fixo da bandeira */
+    height: auto !important;
+    float: none !important;
+    margin: 0 10px 0 0;  /* espaçamento do lado da bandeira */
+}
+
+/* Bandeirinhas menores no celular */
+@media (max-width: 768px) {
+
+    .content img.flag, 
+    .content img[src*="mapa-6"], /* Sarda */
+    .content img[src*="mapa-7"]  /* Basca */ {
+        width: 30px !important;   /* tamanho adequado para celular */
+        height: auto !important;
+        margin: 0 10px 0 0 !important; /* espaçamento à direita */
     }
 }
+
+
 
 
     </style>
@@ -126,7 +130,9 @@
      
     <!-- TÍTULO + BANDEIRA -->
     <div style="display: flex; align-items: center; gap: 10px;">
-        <h2 style="margin: 0;">Linhagem Sarda (Sardenha – Itália)</h2>
+        <h2 style="margin: 0;">Linhagem (Sardenha – Itália)
+
+</h2>
 
         <img src="img/mapa-6.JPG"
          alt="Bandeira da Sardenha"
